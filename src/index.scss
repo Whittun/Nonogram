@@ -1,0 +1,57 @@
+$dark: '.dark';
+
+#{$dark} {
+  background-color: #213c57;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  min-width: 475px;
+  margin: 0;
+
+  font-family: 'Arial', sans-serif;
+  color: #213c57;
+
+  transition: background-color 0.3s;
+}
+
+.off-scroll {
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.main {
+  .container {
+    display: grid;
+    grid-template-areas: 
+      'a b b b'
+      'a c c c'
+      'a c c c'
+    ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: max-content 1fr 1fr;
+
+    max-width: 1220px;
+    width: 100%;
+    min-height: 100vh;
+    margin:  0 auto;
+
+    @media (max-width: 671px) {
+      grid-template-areas: 
+        'b b b b'
+        'a a a a'
+        'c c c c'
+      ;
+
+      grid-template-columns: auto;
+      grid-template-rows: max-content max-content auto;
+    }
+  }
+}

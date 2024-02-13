@@ -1,0 +1,696 @@
+$root: '.game';
+$dark: '.dark';
+
+#{$dark} {
+  #{$root} {
+    background-color: #3d5d7e;
+
+    .board {
+      &__time {
+        color: #ffffff;
+      }
+  
+      .square {
+        background-color: #213c57;
+        border-right: 1px solid #d9e1ec;
+        border-bottom: 1px solid #d9e1ec;
+  
+        &:nth-child(5n) {
+          border-right: 1px solid #d9e1ec;
+        }
+  
+        &:nth-child(-n+5) {
+          border-top: 1px solid #d9e1ec;
+        }
+
+        &--fill {
+          background-color: #ffffff;
+        }
+      }
+
+      .tips {
+        &-top {
+          border-left: 1px solid #d9e1ec;
+          border-top: 1px solid #d9e1ec;
+        }
+    
+        &-left {
+          border-left: 1px solid #d9e1ec;
+        }
+    
+        .tips-line {
+          &-left {
+            border-bottom: 1px solid #d9e1ec;
+    
+            &:first-child {
+              border-top: 1px solid #d9e1ec;
+            }
+          }
+    
+          &-top {
+            .tips-number {
+              border-bottom: 1px solid #d9e1ec;
+            }
+          }
+        }
+    
+        .tips-number {
+          color: #ffffff;
+
+          border-right: 1px solid #d9e1ec;
+          background-color: #213c57;
+        }
+      }
+    }
+
+    .game-field {
+      border-left: 1px solid #d9e1ec;
+    
+      .square {
+        &--active {
+          background-color: #ffffff;
+        }
+  
+        &--cross {
+          &::before,
+          &::after {
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+
+    .result-text {
+      color: #ffffff;
+    }
+    
+    &--medium {
+      .game-field {
+        border-left: 1px solid #d9e1ec;
+        .square {
+          &--active {
+            background-color: #ffffff;
+          }
+    
+          &--cross {
+            &::before,
+            &::after {
+              background-color: #ffffff;
+            }
+          }
+
+          &--fill {
+            background-color: #ffffff;
+          }
+        }
+  
+        .square {
+          &:nth-child(10n) {
+            border-right: 1px solid #d9e1ec;
+          }
+    
+          &:nth-child(-n+10) {
+            border-top: 1px solid #d9e1ec;
+          }
+  
+          &:nth-child(5n) {
+            border-right: 2px solid #d9e1ec;
+          }
+    
+          &:nth-child(n+51):nth-child(-n+60) {
+            border-top: 1px solid #d9e1ec;
+          }
+        }
+      }
+  
+      .tips {
+        &-top {
+          border-left: 1px solid #d9e1ec;
+          border-top: 1px solid #d9e1ec;
+        }
+    
+        &-left {
+          border-left: 1px solid #d9e1ec;
+        }
+    
+        .tips-line {
+          &-left {
+            height: 25px;
+            border-bottom: 1px solid #d9e1ec;
+            &:first-child {
+              border-top: 1px solid #d9e1ec;
+            }
+  
+            &:nth-child(6) {
+              border-top: 1px solid #d9e1ec;
+            }
+          }
+    
+          &-top {
+            &:nth-child(5) {
+              .tips-number {
+                border-right: 2px solid #d9e1ec;
+              }
+            }
+          }
+        }
+    
+        .tips-number {
+          width: 25px;
+          height: 25px;
+  
+          border-right: 1px solid #d9e1ec;
+          background-color: #ffffff;
+        }
+      }
+    }
+
+    &--hard {
+      .board {
+        margin-top: 250px;
+        margin-right: -140px;
+      }
+
+      .game-field {
+        grid-template-columns: repeat(15, 1fr);
+        grid-template-rows: repeat(15, 1fr);
+  
+        border-left: 1px solid #d9e1ec;
+        .square {
+          width: 25px;
+          height: 25px;
+    
+          &--active {
+            background-color: #ffffff;
+          }
+    
+          &--cross {
+            &::before,
+            &::after {
+              background-color: #ffffff;
+            }
+          }
+
+          &--fill {
+            background-color: #ffffff;
+          }
+        }
+  
+        .square {
+          &:nth-child(10n) {
+            border-right: 1px solid #d9e1ec;
+          }
+    
+          &:nth-child(-n+15) {
+            border-top: 1px solid #d9e1ec;
+          }
+  
+          &:nth-child(5n) {
+            border-right: 2px solid #d9e1ec;
+          }
+    
+          &:nth-child(n+76):nth-child(-n+90) {
+            border-top: 1px solid #d9e1ec;
+          }
+  
+          &:nth-child(n+151):nth-child(-n+165) {
+            border-top: 1px solid #d9e1ec;
+          }
+        }
+      }
+  
+      .tips {
+        &-top {
+          border-left: 1px solid #d9e1ec;
+          border-top: 1px solid #d9e1ec;
+        }
+    
+        &-left {
+          border-left: 1px solid #d9e1ec;
+        }
+    
+        .tips-line {
+          &-left {
+            height: 25px;
+            border-bottom: 1px solid #d9e1ec;
+            &:first-child {
+              border-top: 1px solid #d9e1ec;
+            }
+  
+            &:nth-child(6) {
+              border-top: 1px solid #d9e1ec;
+            }
+  
+            &:nth-child(11) {
+              border-top: 1px solid #d9e1ec;
+            }
+          }
+    
+          &-top {
+            &:nth-child(5n) {
+              .tips-number {
+                border-right: 2px solid #d9e1ec;
+              }
+            }
+          }
+        }
+    
+        .tips-number {
+          width: 25px;
+          height: 25px;
+  
+          border-right: 1px solid #213c57;
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+#{$root} {
+  grid-area: c;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: #f3f6f9;
+
+  transition: all 0.3s;
+
+  
+
+  .board {
+    position: relative;
+
+    width: max-content;
+    padding-bottom: 50px;
+    margin-top: 200px;
+    margin-right: -100px;
+
+    @media (max-width: 800px) {
+      padding-bottom: 20px;
+    }
+
+    &--inactive {
+      pointer-events: none;
+    }
+
+    &__time {
+      position: absolute;
+      left: -90px;
+      top: -75px;
+  
+      margin: 0;
+
+      font-size: 24px;
+
+      transition: color 0.3s;
+    }
+
+    .square {
+      background-color: #ffffff;
+      border-right: 1px solid #213c57;
+      border-bottom: 1px solid #213c57;
+
+      transition: all 0.3s;
+
+      &:nth-child(5n) {
+        border-right: 1px solid #213c57;
+      }
+
+      &:nth-child(-n+5) {
+        border-top: 1px solid #213c57;
+      }
+
+      &--fill {
+        background-color: #213c57;
+      }
+    }
+  }
+
+  .result-text {
+    margin-top: 40px;
+
+    font-size: 25px;
+
+    @media (max-width: 995px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 800px) {
+      padding-bottom: 20px;
+      
+      font-size: 15px;
+    }
+  }
+
+  .tips {
+    position: absolute;
+
+    &-top {
+      bottom: 100%;
+
+      display: flex;
+      align-items: end;
+
+      border-left: 1px solid #213c57;
+      border-top: 1px solid #213c57;
+
+      transition: all 0.3s;
+    }
+
+    &-left {
+      right: 100%;
+      top: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      border-left: 1px solid #213c57;
+
+      transition: all 0.3s;
+    }
+
+    .tips-line {
+      margin: 0;
+      padding: 0;
+
+      text-align: center;
+
+      list-style: none;
+
+      transition: all 0.3s;
+
+      &-left {
+        display: flex;
+        height: 40px;
+
+        border-bottom: 1px solid #213c57;
+
+        transition: all 0.3s;
+
+        &:first-child {
+          border-top: 1px solid #213c57;
+        }
+
+        .tips-number {
+          height: auto;
+        }
+      }
+
+      &-top {
+        transition: all 0.3s;
+
+        .tips-number {
+          border-bottom: 1px solid #213c57;
+        }
+      }
+    }
+
+    .tips-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      border-right: 1px solid #213c57;
+      background-color: #ffffff;
+
+      transition: all 0.3s;
+    }
+  }
+
+  .game-field {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: max-content;
+    margin: 0 auto;
+  
+    user-select: none;
+    border-left: 1px solid #213c57;
+
+    transition: all 0.3s;
+  
+    .line {
+      display: flex;
+    }
+  
+    .square {
+      width: 40px;
+      height: 40px;
+    
+      cursor: pointer;
+  
+      &--active {
+        background-color: #213c57;
+      }
+
+      &--cross {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &::before,
+        &::after {
+          content: '';
+
+          position: absolute;
+          width: 1px;
+          height: calc(100%) * sqrt(2);
+
+          background-color: #213c57;
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .board-button {
+    margin-bottom: 20px;
+  }
+
+  &--medium {
+    .board {
+      margin-top: 250px;
+      margin-right: -140px;
+    }
+    .game-field {
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+
+      border-left: 1px solid #213c57;
+      .square {
+        width: 25px;
+        height: 25px;
+  
+        &--active {
+          background-color: #213c57;
+        }
+  
+        &--cross {
+          &::before,
+          &::after {
+            background-color: #213c57;
+          }
+        }
+      }
+
+      .square {
+        &:nth-child(10n) {
+          border-right: 1px solid #213c57;
+        }
+  
+        &:nth-child(-n+10) {
+          border-top: 1px solid #213c57;
+        }
+
+        &:nth-child(5n) {
+          border-right: 2px solid #213c57;
+        }
+  
+        &:nth-child(n+51):nth-child(-n+60) {
+          border-top: 1px solid #213c57;
+        }
+      }
+    }
+
+    .tips {
+      &-top {
+        border-left: 1px solid #213c57;
+        border-top: 1px solid #213c57;
+      }
+  
+      &-left {
+        border-left: 1px solid #213c57;
+      }
+  
+      .tips-line {
+        &-left {
+          height: 25px;
+          border-bottom: 1px solid #213c57;
+          &:first-child {
+            border-top: 1px solid #213c57;
+          }
+
+          &:nth-child(6) {
+            border-top: 1px solid #213c57;
+          }
+        }
+  
+        &-top {
+          &:nth-child(5) {
+            .tips-number {
+              border-right: 2px solid #213c57;
+            }
+          }
+        }
+      }
+  
+      .tips-number {
+        width: 25px;
+        height: 25px;
+
+        border-right: 1px solid #213c57;
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  &--hard {
+    .board {
+      margin-top: 250px;
+      margin-right: -140px;
+
+      @media (max-width: 885px) {
+        margin-right: -200px !important;
+      }
+
+      @media (max-width: 789px) {
+        margin-right: -162px !important;
+      }
+    }
+
+    .game-field {
+      grid-template-columns: repeat(15, 1fr);
+      grid-template-rows: repeat(15, 1fr);
+
+      border-left: 1px solid #213c57;
+      .square {
+        width: 25px;
+        height: 25px;
+  
+        &--active {
+          background-color: #213c57;
+        }
+  
+        &--cross {
+          &::before,
+          &::after {
+            background-color: #213c57;
+          }
+        }
+      }
+
+      .square {
+        &:nth-child(10n) {
+          border-right: 1px solid #213c57;
+        }
+  
+        &:nth-child(-n+15) {
+          border-top: 1px solid #213c57;
+        }
+
+        &:nth-child(5n) {
+          border-right: 2px solid #213c57;
+        }
+  
+        &:nth-child(n+76):nth-child(-n+90) {
+          border-top: 1px solid #213c57;
+        }
+
+        &:nth-child(n+151):nth-child(-n+165) {
+          border-top: 1px solid #213c57;
+        }
+      
+        @media (max-width: 789px) {
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
+
+    .tips {
+      &-top {
+        border-left: 1px solid #213c57;
+        border-top: 1px solid #213c57;
+      }
+  
+      &-left {
+        border-left: 1px solid #213c57;
+      }
+  
+      .tips-line {
+        &-left {
+          height: 25px;
+
+          @media (max-width: 789px) {
+            height: 20px !important;
+          }
+          border-bottom: 1px solid #213c57;
+          &:first-child {
+            border-top: 1px solid #213c57;
+          }
+
+          &:nth-child(6) {
+            border-top: 1px solid #213c57;
+          }
+
+          &:nth-child(11) {
+            border-top: 1px solid #213c57;
+          }
+        }
+  
+        &-top {
+          &:nth-child(5n) {
+            .tips-number {
+              border-right: 2px solid #213c57;
+            }
+          }
+        }
+      }
+  
+      .tips-number {
+        width: 25px;
+        height: 25px;
+
+        @media (max-width: 789px) {
+          width: 20px !important;
+
+          font-size: 13px;
+        }
+
+        border-right: 1px solid #213c57;
+        background-color: #ffffff;
+
+        &-top {
+          @media (max-width: 789px) {
+            height: 20px !important;
+          }
+        }
+      }
+    }
+  }
+}
